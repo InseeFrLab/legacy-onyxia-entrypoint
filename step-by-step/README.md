@@ -47,7 +47,7 @@ Create a realm (in this tutorial we choose `onyxia-demo`) and a client (we choos
 Here are some client settings :
 
 - ROOT url : https://onyxia.demo.insee.io
-- Valid redirect URIs : [http://onyxia.demo.insee.io/*](http://onyxia.demo.insee.io/*), [https://onyxia.demo.insee.io/*](https://onyxia.demo.insee.io/*)
+- Valid redirect URIs : [http://onyxia.demo.insee.io/\*](http://onyxia.demo.insee.io/*), [https://onyxia.demo.insee.io/\*](https://onyxia.demo.insee.io/*)
 - Web-origins : http://onyxia.demo.insee.io, https://onyxia.demo.insee.io
 
 Also create at least one user with a password set.
@@ -82,6 +82,45 @@ Onyxia provides a S3 compatible integration. The main feature is injecting user'
 
 If you already have a running minIO instance or compatible object storage, you can skip this step.
 
-An example of MinIO deployment can be found [here](minio). If you use it, make sure to change credentials beforehand.
+An example of MinIO deployment can be found [here](minio). If you use it, make sure to change credentials beforehand. Also note that persistence has been disabled so any pod restart will wipe any data and policy.
 
-TODO : minio specific configuration
+### Configuring Keycloak for minIO
+
+We will need to make some changes to Keycloak to support minIO :
+
+- Create a new client (e.g `minio`) with `https://minio-console.demo.insee.io` as root URL, `https://minio-console.demo.insee.io/*` as valid redirect URIs, `https://minio-console.demo.insee.io` as web origins. For this client, add a mapper of type `Hardcoded claim` with claim name `policy` and claim value `stsonly`. Make sure `Add to id Token` is enabled.
+- In Onyxia's client configuration, add two mappers : `audience-minio` of type `Audience` with `Included client audience: minio` and `policy` of type `Hardcoded claim` with claim name `policy` and claim value `stsonly`.
+- You probably want to extend token's duration as the `5 minutes` default value is not enough for users to use the token inside their services. This can be done either `realm wide` (realm settings => tokens) or `per client` (settings => advanced settings).
+- If you intend to use groups or want to workaround this bug : https://github.com/InseeFrLab/onyxia-web/issues/263, you may want to add a `groups` client scope with a `Group membership` mapper.
+
+### Configure minIO
+
+MinIO is now capable of authenticating users (thanks to `MINIO_IDENTITY_OPENID_CLIENT_ID`, `MINIO_IDENTITY_OPENID_CONFIG_URL` and other variables) but we still have to specify the permissions. This is done using a `policy`.  
+Onyxia currently uses a basic `userid` <> `bucketid` permissions system. Basically each user has access to the bucket with the id equals to it's `userid`.
+
+We provide a sample policy : [stsonly.json](minio/stsonly.json).  
+To apply this policy, you can use the minio client :  
+Download the client from https://min.io/download#/linux then
+
+```
+mc alias set demo https://minio.demo.insee.io admin changeme
+mc admin policy add demo stsonly ./minio/stsonly.json
+```
+
+If successful, you should be able to login to the minio console and create the bucket that has the same name as your user id.
+
+### Link minIO to Onyxia
+
+In Onyxia's UI configuration, we only need to set `MINIO_URL: https://minio.demo.insee.io` :
+
+[4-minio.yaml](values/4-minio.yaml)
+
+```
+helm upgrade onyxia inseefrlab/onyxia -f values/4-minio.yaml
+```
+
+## Set up secret management
+
+### Deploy vault
+
+TODO
