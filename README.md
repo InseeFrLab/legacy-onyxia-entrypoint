@@ -1,21 +1,23 @@
 # The Onyxia Datalab
 
-Welcome to the Onyxia Datalab !  
+Welcome to the Onyxia Datalab !
 
 ## Quickstart
 
-The simplest way to install Onyxia is on `Kubernetes` using `Helm`.
+The simplest way to install Onyxia is to use [`Helm`](https://helm.sh).
 
 ```
 helm repo add inseefrlab https://inseefrlab.github.io/helm-charts
 helm install onyxia inseefrlab/onyxia --set ingress.enabled=true --set ingress.hosts[0].host=datalab.yourdomain.com
-```  
+```
 
-Browse to `http://datalab.yourdomain.com` and enjoy :)  
+Browse to `http://datalab.yourdomain.com` and enjoy :)
+
+Note that this is only a bare installation of Onyxia with some major limitations (no authentication, deployed services won't be accessible ...). Read below for more configuration options.
 
 ## Installation & configuration
 
-See [Installation](INSTALL.md)  
+See [Installation](INSTALL.md)
 
 ## Modules
 
@@ -23,7 +25,7 @@ Onyxia is split into several modules :
 
 | Module                                                 | Purpose                            | Status                 |
 | ------------------------------------------------------ | ---------------------------------- | ---------------------- |
-| [Onyxia WEB](https://github.com/inseefrlab/onyxia-web)   | Web UI (`React`)                   | :white_check_mark:     |
+| [Onyxia WEB](https://github.com/inseefrlab/onyxia-web) | Web UI (`React`)                   | :white_check_mark:     |
 | [Onyxia API](https://github.com/inseefrlab/onyxia-api) | Server part (`Java / Spring-boot`) | :white_check_mark:     |
 | [Onyxia CLI](https://github.com/inseefrlab/onyxia-cli) | Command line application (`Go`)    | :large_orange_diamond: |
 
@@ -34,10 +36,9 @@ Onyxia is split into several modules :
 Onyxia relies on catalogs to provide users with a selection of services they can install in one click.  
 You can either create your own repositories or use the default ones :
 
-| Repository                                                                       | Purpose                                                         | Status                 |
-| -------------------------------------------------------------------------------- | --------------------------------------------------------------- | ---------------------- |
-| [Helm charts datascience](https://github.com/inseefrlab/helm-charts-datascience) | Datascience catalog using `Helm` (for `Kubernetes`) format      | :white_check_mark:     |
-| [Universe datascience](https://github.com/inseefrlab/universe-datascience)       | Datascience catalog using `Universe` (for `DC/OS` / `Marathon`) | :large_orange_diamond: |
+| Repository                                                                       | Purpose                                                    | Status             |
+| -------------------------------------------------------------------------------- | ---------------------------------------------------------- | ------------------ |
+| [Helm charts datascience](https://github.com/inseefrlab/helm-charts-datascience) | Datascience catalog using `Helm` (for `Kubernetes`) format | :white_check_mark: |
 
 ### Docker images for services
 

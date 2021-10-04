@@ -1,0 +1,23 @@
+keycloak:
+  extraEnv: |
+    - name: KEYCLOAK_USER
+      value: admin
+    - name: KEYCLOAK_PASSWORD
+      value: changeme
+
+  ingress:
+    enabled: true
+    annotations:
+      nginx.ingress.kubernetes.io/proxy-buffer-size: 128k
+      nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    rules:
+      - host: "keycloak.demo.insee.io"
+        paths:
+          - path: /
+            pathType: Prefix
+    tls:
+      - hosts:
+          - keycloak.demo.insee.io
+
+  postgresql:
+    enabled: false

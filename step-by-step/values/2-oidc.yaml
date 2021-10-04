@@ -1,0 +1,15 @@
+ingress:
+  enabled: true
+  hosts:
+    - host: onyxia.demo.insee.io
+ui:
+  env:
+    OIDC_REALM: onyxia-demo
+    OIDC_CLIENT_ID: onyxia-client
+    OIDC_URL: https://keycloak.demo.insee.io/auth
+api:
+  env:
+    keycloak.realm: onyxia-demo
+    keycloak.auth-server-url: http://keycloak.demo.insee.io/auth
+    authentication.mode: "openidconnect"
+    springdoc.swagger-ui.oauth.clientId: onyxia-client
