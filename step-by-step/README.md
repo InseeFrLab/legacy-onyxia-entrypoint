@@ -16,6 +16,10 @@ You can read more about Onyxia's prerequisites and optional dependencies [here](
 
 ## Install Onyxia
 
+```
+helm repo add inseefrlab https://inseefrlab.github.io/helm-charts
+```
+
 [1-basic.yaml](values/1-basic.yaml)
 
 ```
