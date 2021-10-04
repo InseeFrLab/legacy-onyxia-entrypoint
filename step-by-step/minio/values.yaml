@@ -1,0 +1,28 @@
+minio:
+  persistence:
+    enabled: false
+  accessKey:
+    password: "admin"
+  secretKey:
+    password: "changeme"
+  ingress:
+    enabled: true
+    hostname: minio-console.demo.insee.io
+    annotations:
+      kubernetes.io/ingress.class: nginx
+  apiIngress:
+    enabled: true
+    hostname: minio.demo.insee.io
+    annotations:
+      kubernetes.io/ingress.class: nginx
+  extraEnv:
+    - name: MINIO_IDENTITY_OPENID_CONFIG_URL
+      value: "https://keycloak.demo.insee.io/auth/realms/onyxia-demo/.well-known/openid-configuration"
+    - name: MINIO_IDENTITY_OPENID_CLIENT_ID
+      value: minio
+    - name: MINIO_DOMAIN
+      value: "minio.demo.insee.io"
+    - name: MINIO_IDENTITY_OPENID_REDIRECT_URI
+      value: https://minio-console.demo.insee.io/oauth_callback
+    - name: MINIO_IDENTITY_OPENID_SCOPES
+      value: openid, profile, email, roles

@@ -58,7 +58,7 @@ Also create at least one user with a password set.
 
 ```
 helm upgrade onyxia inseefrlab/onyxia -f values/2-oidc.yaml
-```  
+```
 
 Authentication is now enabled on Onyxia, users will be prompted to log-in before being able to access advanced features such as deploying on-demand services (note that the catalog is browsable without authentication).
 
@@ -73,3 +73,15 @@ We also set the domain name used by created services as `"expose": { "domain": "
 ```
 helm upgrade onyxia inseefrlab/onyxia -f values/3-regions.yaml
 ```
+
+## Set up object management
+
+Onyxia provides a S3 compatible integration. The main feature is injecting user's credentials into their on-demand services so that they can seamlessly interact with the object storage directly from the created services.
+
+### Deploy minIO
+
+If you already have a running minIO instance or compatible object storage, you can skip this step.
+
+An example of MinIO deployment can be found [here](minio). If you use it, make sure to change credentials beforehand.
+
+TODO : minio specific configuration
