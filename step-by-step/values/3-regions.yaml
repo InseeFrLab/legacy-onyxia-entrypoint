@@ -14,7 +14,7 @@ ui:
 api:
   env:
     keycloak.realm: onyxia-demo
-    keycloak.auth-server-url: http://keycloak.demo.insee.io/auth
+    keycloak.auth-server-url: https://keycloak.demo.insee.io/auth
     authentication.mode: "openidconnect"
     springdoc.swagger-ui.oauth.clientId: onyxia-client
   regions: [
