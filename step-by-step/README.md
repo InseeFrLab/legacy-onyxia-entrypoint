@@ -58,13 +58,15 @@ Also create at least one user with a password set.
 
 ```
 helm upgrade onyxia inseefrlab/onyxia -f values/2-oidc.yaml
-```
+```  
+
+Authentication is now enabled on Onyxia, users will be prompted to log-in before being able to access advanced features such as deploying on-demand services (note that the catalog is browsable without authentication).
 
 ## Activate multi namespace mode and regions configuration
 
 Now that users are authenticated, we can switch to multi namespaces (so that each user deploy services into it's own namespace).  
 Note that this requires `cluster-admin` role (`serviceAccount.clusterAdmin=true` in helm values).  
-We also set the domain name used by created services as `"expose": { "domain": "demo.insee.io" }` so that each created service will be accessible at `random-generated-value.demo.insee.io`.
+We also set the domain name used by created services as `"expose": { "domain": "demo.insee.io" }` so that each created service will be accessible at `pseudorandom-generated-value.demo.insee.io`.
 
 [3-regions.yaml](values/3-regions.yaml)
 
