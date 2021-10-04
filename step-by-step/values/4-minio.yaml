@@ -11,6 +11,7 @@ ui:
     OIDC_REALM: onyxia-demo
     OIDC_CLIENT_ID: onyxia-client
     OIDC_URL: https://keycloak.demo.insee.io/auth
+    MINIO_URL: https://minio.demo.insee.io
 api:
   env:
     keycloak.realm: onyxia-demo

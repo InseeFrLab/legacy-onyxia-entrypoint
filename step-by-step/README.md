@@ -47,7 +47,7 @@ Create a realm (in this tutorial we choose `onyxia-demo`) and a client (we choos
 Here are some client settings :
 
 - ROOT url : https://onyxia.demo.insee.io
-- Valid redirect URIs : http://onyxia.demo.insee.io, https://onyxia.demo.insee.io
+- Valid redirect URIs : [http://onyxia.demo.insee.io/*](http://onyxia.demo.insee.io/*), [https://onyxia.demo.insee.io/*](https://onyxia.demo.insee.io/*)
 - Web-origins : http://onyxia.demo.insee.io, https://onyxia.demo.insee.io
 
 Also create at least one user with a password set.
