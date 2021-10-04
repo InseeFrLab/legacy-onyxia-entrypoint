@@ -1,0 +1,14 @@
+vault:
+  injector:
+    enabled: false
+
+  server:
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
+      hosts:
+        - host: "vault.demo.insee.io"
+      tls:
+        - hosts:
+            - vault.demo.insee.io
