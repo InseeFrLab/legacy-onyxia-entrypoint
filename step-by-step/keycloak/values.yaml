@@ -4,6 +4,8 @@ keycloak:
       value: admin
     - name: KEYCLOAK_PASSWORD
       value: changeme
+    - name: PROXY_ADDRESS_FORWARDING
+      value: "true"
 
   ingress:
     enabled: true
