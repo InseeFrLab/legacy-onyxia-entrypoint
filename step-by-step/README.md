@@ -123,4 +123,69 @@ helm upgrade onyxia inseefrlab/onyxia -f values/4-minio.yaml
 
 ### Deploy vault
 
-TODO
+If you already have a running Vault instance, you can skip this step.
+
+An example of Vault deployment can be found [here](vault). If you use it, make sure to change credentials beforehand. Also note that persistence has been disabled so any pod restart will wipe any data. Also note that [dev mode](https://www.vaultproject.io/docs/concepts/dev-server) is also enabled to facilitate install for demonstration purpose. **This mode is not suitable for production**.
+
+### Configure Vault  
+
+We will now configure vault to enable `JWT` support, set policies for users permissions and initialize the secret engine.  
+You will need the vault `CLI`. You can either download it [here](https://www.vaultproject.io/downloads) and configure `VAULT_ADDR=https://vault.demo.insee.io` and `VAULT_TOKEN=root` or exec into the vault pod `kubectl exec -it vault-0 -n vault -- /bin/sh` which will have vault `CLI` installed and preconfigured.  
+
+```
+vault auth enable jwt
+```  
+
+```
+vault write auth/jwt/config \
+    oidc_discovery_url="https://keycloak.demo.insee.io/auth/realms/onyxia-demo" \
+    default_role="onyxia-user"
+```  
+
+```
+vault write auth/jwt/role/onyxia-user \
+    role_type="jwt" \
+    bound_audiences="onyxia" \
+    user_claim="preferred_username" \
+    policies="default"
+```
+
+We now need to set the policy for permissions.  
+Locally create a `onyxia-kv-policy.hcl` file with the following content, replacing `auth_jwt_fd8af65a` with the generated id from the previous step. You can get it using `vault auth list | grep jwt | awk '{print $3}'`.  
+```
+path "onyxia-kv/{{identity.entity.aliases.auth_jwt_fd8af65a.name}}/*" {
+  capabilities = ["create","update","read","delete","list"]
+}
+
+path "onyxia-kv/data/{{identity.entity.aliases.auth_jwt_fd8af65a.name}}/*" {
+  capabilities = ["create","update","read"]
+}
+
+path "onyxia-kv/metadata/{{identity.entity.aliases.auth_jwt_fd8af65a.name}}/*" {
+  capabilities = ["delete", "list", "read"]
+}
+```  
+
+Then apply the policy :  
+
+```
+vault policy write onyxia-kv onyxia-kv-policy.hcl
+```
+
+And finally, enable the secret engine :  
+
+```
+vault secrets enable -path=onyxia-kv kv-v2
+```
+
+### Link Vault to Onyxia
+
+In Onyxia's UI configuration, we only need to set `VAULT_URL: https://vault.demo.insee.io` :
+
+[5-vault.yaml](values/5-vault.yaml)
+
+```
+helm upgrade onyxia inseefrlab/onyxia -f values/5-vault.yaml
+```
+
+If you used other values for the engine or role than the default one, also specify the corresponding env variable : `VAULT_KV_ENGINE=onyxia-kv` and `VAULT_ROLE=onyxia-user`.
