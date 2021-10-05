@@ -41,7 +41,9 @@ Note that this installation is very basic and has the following limitations :
 
 Advanced configuration is [described below](#configuration).
 
-## <a name="dependencies"></a> Optional dependencies
+## <a name="dependencies"></a> Optional dependencies  
+
+Work in progress, see [step-by-step](step-by-step)
 
 ### Keycloak
 
@@ -51,3 +53,4 @@ Advanced configuration is [described below](#configuration).
 
 ## <a name="configuration"></a> Advanced configuration  
 
+Work in progress, see [step-by-step](step-by-step)

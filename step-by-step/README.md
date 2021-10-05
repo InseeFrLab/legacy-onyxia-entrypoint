@@ -50,7 +50,7 @@ Here are some client settings :
 - Valid redirect URIs : [http://onyxia.demo.insee.io/\*](http://onyxia.demo.insee.io/*), [https://onyxia.demo.insee.io/\*](https://onyxia.demo.insee.io/*)
 - Web-origins : http://onyxia.demo.insee.io, https://onyxia.demo.insee.io
 
-Also create at least one user with a password set.
+Also create at least one user (make user to only use `a-z0-9` characters for username, no special characters) with a password set.
 
 ### Activate openidconnect in Onyxia
 
