@@ -61,3 +61,36 @@ The docker image used is codenamed `Shelly` and is available here : [Shelly](htt
 
 The `cloud-scripts` repository is a collection of scripts we used at some point at `Insee`. They are provided as is with minimal to no documentation and support. They are, currently at least, used as memo and not production grade code.  
 The repository is available here : [cloud-scripts](https://github.com/inseefrlab/cloud-scripts)
+
+## Roadmap
+
+The Onyxia project is actively developed. We are constantly working on new functionalities to meet our users needs at [Insee](https://github.com/InseeFr). Do not hesitate to [get in touch with us](https://github.com/InseeFrLab/onyxia/discussions/new) to ask questions or share your ideas!
+
+### Recently released :gift:
+
+- New services: Argo CD, Argo Workflow and Gravitee
+- Step by step Onyxia deployment guide
+- Customizable UI themes
+- Pin & edit custom services
+- Secrets management
+
+### Coming soon :detective:
+
+- Projects and collaboration
+
+### WIP :hammer_and_wrench:
+
+- Onyxia installation documentation
+- Project documentation (`CONTRIBUTING.md`...)
+
+### Ideas :bulb:
+
+- End user documentation
+- Extend the catalog of data science services
+- Data governance (data & metadata management, data lineage...)
+- What data management features does a user need in Onyxia (objects explorer, PV manager...)?
+- Billing, monitoring & housekeeping of services
+
+
+- Onyxia deployment automation
+- Instance administration (users & groups...)
