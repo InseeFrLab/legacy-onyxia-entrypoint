@@ -64,7 +64,7 @@ The repository is available here : [cloud-scripts](https://github.com/inseefrlab
 
 ## Roadmap
 
-The Onyxia project is actively developed at @InseeFrLab. We are constantly working on new functionalities to meet our users needs at @InseeFr. Do not hesitate to [get in touch with us](https://github.com/InseeFrLab/onyxia/discussions/new) to ask questions or share your ideas!
+The Onyxia project is actively developed. We are constantly working on new functionalities to meet our users needs at [Insee](https://github.com/InseeFr). Do not hesitate to [get in touch with us](https://github.com/InseeFrLab/onyxia/discussions/new) to ask questions or share your ideas!
 
 ### Recently released :gift:
 
@@ -90,6 +90,7 @@ The Onyxia project is actively developed at @InseeFrLab. We are constantly worki
 - Data governance (data & metadata management, data lineage...)
 - What data management features does a user need in Onyxia (objects explorer, PV manager...)?
 - Billing, monitoring & housekeeping of services
+
 
 - Onyxia deployment automation
 - Instance administration (users & groups...)
