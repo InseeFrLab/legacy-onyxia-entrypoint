@@ -38,7 +38,6 @@ Onyxia is developed by the French National institute of statistic and economic s
 # Table of content
 
 - [Table of content](#table-of-content)
-	- [Who's using it](#whos-using-it)
 	- [Screenshots](#screenshots)
 	- [Deploy onyxia on your infrastructure today 🚀](#deploy-onyxia-on-your-infrastructure-today-)
 	- [Installation & configuration](#installation--configuration)
@@ -54,29 +53,6 @@ Onyxia is developed by the French National institute of statistic and economic s
 		- [WIP 🏗](#wip-)
 		- [Ideas 💡](#ideas-)
 	- [Media](#media)
-
-## Who's using it
-
-<p align="center">
-    <a href="https://www.insee.fr/">
-        <img src="https://user-images.githubusercontent.com/6702424/137826643-4d9a8fb3-9228-44a4-817d-5c8ca613a0f8.png">
-    </a>
-    <a href="https://ec.europa.eu/eurostat">
-        <img src="https://user-images.githubusercontent.com/6702424/137826635-48005668-a702-4733-aba1-5fb4af51d3af.png"> 
-    </a>
-    <br>
-    <a href="https://www.etalab.gouv.fr">
-        <img src="https://user-images.githubusercontent.com/6702424/137826644-0f423595-481a-44fd-97db-43bd3a38283a.png"> 
-    </a>
-    <a href="https://www.ensae.fr">
-        <img src="https://user-images.githubusercontent.com/6702424/137826640-f4b6800f-e9c7-434d-a226-c20526dab560.png"> 
-    </a>
-    <a href="https://ensai.fr">
-        <img src="https://user-images.githubusercontent.com/6702424/137826641-750da03a-4c34-462c-8924-515af2e98be0.png"> 
-    </a>
-</p>
-
-
 
 ## Screenshots
 
