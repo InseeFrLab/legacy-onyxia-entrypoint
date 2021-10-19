@@ -40,7 +40,6 @@ Onyxia is developed by the French National institute of statistic and economic s
 - [Table of content](#table-of-content)
 	- [Who's using it](#whos-using-it)
 	- [Screenshots](#screenshots)
-	- [Media](#media)
 	- [Deploy onyxia on your infrastructure today 🚀](#deploy-onyxia-on-your-infrastructure-today-)
 	- [Installation & configuration](#installation--configuration)
 	- [Modules](#modules)
@@ -54,6 +53,7 @@ Onyxia is developed by the French National institute of statistic and economic s
 		- [Coming soon ☄️](#coming-soon-️)
 		- [WIP 🏗](#wip-)
 		- [Ideas 💡](#ideas-)
+	- [Media](#media)
 
 ## Who's using it
 
@@ -84,10 +84,6 @@ Onyxia is developed by the French National institute of statistic and economic s
 ![scree_myservices](https://user-images.githubusercontent.com/6702424/121828699-a8a36600-ccc0-11eb-903c-1cd4b6cbb0ff.png)
 ![screen_launcher](https://user-images.githubusercontent.com/6702424/121828696-a80acf80-ccc0-11eb-86fb-c7d0bca55d4f.png)
 ![my_secrets](https://user-images.githubusercontent.com/6702424/121828695-a5a87580-ccc0-11eb-9e86-295fdac6c497.png)
-
-## Media
-
-[![EIG](https://user-images.githubusercontent.com/6702424/137828015-28cf459f-0cdb-437e-ab32-0a9b0dd03c74.png)](https://youtu.be/ukMHBAXwzRg)
 
 
 ## Deploy onyxia on your infrastructure today 🚀
@@ -184,3 +180,7 @@ The Onyxia project is actively developed. We are constantly working on new funct
 
 - Onyxia deployment automation
 - Instance administration (users & groups...)
+
+## Media
+
+[![EIG](https://user-images.githubusercontent.com/6702424/137828015-28cf459f-0cdb-437e-ab32-0a9b0dd03c74.png)](https://youtu.be/ukMHBAXwzRg)
