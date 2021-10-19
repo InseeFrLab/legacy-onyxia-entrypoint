@@ -159,4 +159,4 @@ The Onyxia project is actively developed. We are constantly working on new funct
 
 ## Media
 
-[![EIG](https://user-images.githubusercontent.com/6702424/137828015-28cf459f-0cdb-437e-ab32-0a9b0dd03c74.png)](https://youtu.be/ukMHBAXwzRg)
+[![EIG](https://user-images.githubusercontent.com/6702424/137893928-e341f3fe-13cf-44e6-9332-7ade8653c7f8.png)](https://youtu.be/ukMHBAXwzRg)
