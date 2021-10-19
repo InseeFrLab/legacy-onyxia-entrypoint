@@ -173,7 +173,7 @@ The Onyxia project is actively developed. We are constantly working on new funct
 
 - End user documentation
 - Extend the catalog of data science services
-- Data governance (data & metadata management, data lineage...)
+- Data governance (data & metadata management, data cataloging, data lineage, data quality management)
 - What data management features does a user need in Onyxia (objects explorer, PV manager...)?
 - Billing, monitoring & housekeeping of services
 
