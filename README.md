@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/6702424/111553867-7fd50880-8785-11eb-8942-75f161864b5f.png">
+    <img src="https://user-images.githubusercontent.com/6702424/137828729-173cfe2b-54dc-4e7e-aa60-4e3fe3a4fb39.png">
 </p>
 <p align="center">
     <i>🔬 A data science oriented container launcher 🔬</i>
