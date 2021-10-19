@@ -1,8 +1,100 @@
-# The Onyxia Datalab
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/6702424/111553867-7fd50880-8785-11eb-8942-75f161864b5f.png">
+</p>
+<p align="center">
+    <i>🔬 A data science oriented container launcher 🔬</i>
+    <br>
+    <br>
+    <img src="https://img.shields.io/npm/l/onyxia-ui">
+</p>
 
-Welcome to the Onyxia Datalab !
+<p align="center">
+  <a href="https://datalab.sspcloud.fr" title="Instance of Onyxia hosted in INSEE's data center">Our instance of Onyxia @ INSEE</a>
+</p>
 
-## Quickstart
+Onyxia is a web app that aims at being the glue between multiple open source backend technologies to
+provide a state of art working environnement for data scientists.  
+Onyxia is developed by the French National institute of statistic and economic studies ([INSEE](https://insee.fr)).  
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/6702424/136545513-f623d8c7-260d-4d93-a01e-2dc5af6ad473.gif" />
+</p>
+
+**Core feature set**:
+
+- [An interface for launching docker images](https://datalab.sspcloud.fr/catalog/inseefrlab-helm-charts-datascience) 
+  (e.g: [Jupyter](https://jupyter.org), [RStudio](https://www.rstudio.com)) on demand on a [Kubernetes](https://kubernetes.io) cluster.  
+  The catalog of available images is not part of the app, you can create your own. 
+  ([here](https://github.com/inseefrlab/helm-charts-datascience) the catalog we build for the institute's needs.)
+- Define [the amount of RAM, CPU and **GPU** they would like to allocate](https://user-images.githubusercontent.com/6702424/137818454-3fdb3efb-1fbd-4e4d-85b1-64b00d8af03e.png) 
+  to their containers.
+- Specify [a custom init script](https://user-images.githubusercontent.com/6702424/137819445-a9dfd053-a5f1-48da-a294-f20717512ef5.png) to be executed at launch.
+- [Define environnement variables](https://user-images.githubusercontent.com/6702424/137819689-71e59823-a553-4c3c-8558-2576316e4709.png) to be made available in the containers.
+- [Save and restore your service service configurations](https://user-images.githubusercontent.com/6702424/137819972-b9974760-4647-43ff-b985-f3facfce99de.png)
+- Deep integration with S3 for working with data (S3 as the open standard, not the AWS service) and with [Vault](https://www.vaultproject.io) 
+  ( for [secret management](https://user-images.githubusercontent.com/6702424/137820741-bed9ee77-124a-46f6-b686-8b8dff1615bd.png) )
+- [Keycloak integration](https://user-images.githubusercontent.com/6702424/137821446-ed908862-69e3-464c-b347-bd8776a425cc.png).
+
+# Table of content
+
+- [Table of content](#table-of-content)
+	- [Who's using it](#whos-using-it)
+	- [Screenshots](#screenshots)
+	- [Media](#media)
+	- [Deploy onyxia on your infrastructure today 🚀](#deploy-onyxia-on-your-infrastructure-today-)
+	- [Installation & configuration](#installation--configuration)
+	- [Modules](#modules)
+		- [Services catalogs](#services-catalogs)
+		- [Docker images for services](#docker-images-for-services)
+		- [Cloudshell](#cloudshell)
+		- [Miscellaneous](#miscellaneous)
+		- [Infrastructure scripts](#infrastructure-scripts)
+	- [Roadmap 🛣](#roadmap-)
+		- [Recently released 🎁](#recently-released-)
+		- [Coming soon ☄️](#coming-soon-️)
+		- [WIP 🏗](#wip-)
+		- [Ideas 💡](#ideas-)
+
+## Who's using it
+
+<p align="center">
+    <a href="https://www.insee.fr/">
+        <img src="https://user-images.githubusercontent.com/6702424/137826643-4d9a8fb3-9228-44a4-817d-5c8ca613a0f8.png">
+    </a>
+    <a href="https://ec.europa.eu/eurostat">
+        <img src="https://user-images.githubusercontent.com/6702424/137826635-48005668-a702-4733-aba1-5fb4af51d3af.png"> 
+    </a>
+    <br>
+    <a href="https://www.etalab.gouv.fr">
+        <img src="https://user-images.githubusercontent.com/6702424/137826644-0f423595-481a-44fd-97db-43bd3a38283a.png"> 
+    </a>
+    <a href="https://www.ensae.fr">
+        <img src="https://user-images.githubusercontent.com/6702424/137826640-f4b6800f-e9c7-434d-a226-c20526dab560.png"> 
+    </a>
+    <a href="https://ensai.fr">
+        <img src="https://user-images.githubusercontent.com/6702424/137826641-750da03a-4c34-462c-8924-515af2e98be0.png"> 
+    </a>
+</p>
+
+
+
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/6702424/122631126-8c8d3380-d0c9-11eb-968f-af3e605b0e07.png)
+![scree_myservices](https://user-images.githubusercontent.com/6702424/121828699-a8a36600-ccc0-11eb-903c-1cd4b6cbb0ff.png)
+![screen_launcher](https://user-images.githubusercontent.com/6702424/121828696-a80acf80-ccc0-11eb-86fb-c7d0bca55d4f.png)
+![my_secrets](https://user-images.githubusercontent.com/6702424/121828695-a5a87580-ccc0-11eb-9e86-295fdac6c497.png)
+
+## Media
+
+[![EIG](https://user-images.githubusercontent.com/6702424/137828015-28cf459f-0cdb-437e-ab32-0a9b0dd03c74.png)](https://youtu.be/ukMHBAXwzRg)
+
+
+## Deploy onyxia on your infrastructure today 🚀
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/6702424/137823160-40676450-36db-411d-a314-666d626d040f.png" />
+</p>
 
 The simplest way to install Onyxia is to use [`Helm`](https://helm.sh).
 
@@ -23,13 +115,12 @@ See [Installation](INSTALL.md)
 
 Onyxia is split into several modules :
 
-| Module                                                 | Purpose                            | Status                 |
-| ------------------------------------------------------ | ---------------------------------- | ---------------------- |
-| [Onyxia WEB](https://github.com/inseefrlab/onyxia-web) | Web UI (`React`)                   | :white_check_mark:     |
-| [Onyxia API](https://github.com/inseefrlab/onyxia-api) | Server part (`Java / Spring-boot`) | :white_check_mark:     |
-| [Onyxia CLI](https://github.com/inseefrlab/onyxia-cli) | Command line application (`Go`)    | :large_orange_diamond: |
-
-## Related repositories
+| Module                                                 | Description                           | Status                 |
+| ------------------------------------------------------ | --------------------------------------| ---------------------- |
+| [Onyxia WEB](https://github.com/inseefrlab/onyxia-web) | Web UI (`React`)                      | :white_check_mark:     |
+| [Onyxia API](https://github.com/inseefrlab/onyxia-api) | Kubernetes API (`Java / Spring-boot`) | :white_check_mark:     |
+| [Onyxia-UI](https://github.com/InseeFrLab/onyxia-ui)   | Design system and React UI toolkit    | :white_check_mark:     |
+| [Onyxia CLI](https://github.com/inseefrlab/onyxia-cli) | Command line application (`Go`)       | :large_orange_diamond: |
 
 ### Services catalogs
 
@@ -62,11 +153,10 @@ The docker image used is codenamed `Shelly` and is available here : [Shelly](htt
 The `cloud-scripts` repository is a collection of scripts we used at some point at `Insee`. They are provided as is with minimal to no documentation and support. They are, currently at least, used as memo and not production grade code.  
 The repository is available here : [cloud-scripts](https://github.com/inseefrlab/cloud-scripts)
 
-## Roadmap
+## Roadmap 🛣
 
 The Onyxia project is actively developed. We are constantly working on new functionalities to meet our users needs at [Insee](https://github.com/InseeFr). Do not hesitate to [get in touch with us](https://github.com/InseeFrLab/onyxia/discussions/new) to ask questions or share your ideas!
-
-### Recently released :gift:
+### Recently released 🎁
 
 - New services: Argo CD, Argo Workflow and Gravitee
 - Step by step Onyxia deployment guide
@@ -74,16 +164,16 @@ The Onyxia project is actively developed. We are constantly working on new funct
 - Pin & edit custom services
 - Secrets management
 
-### Coming soon :detective:
+### Coming soon ☄️
 
 - Projects and collaboration
 
-### WIP :hammer_and_wrench:
+### WIP 🏗
 
 - Onyxia installation documentation
 - Project documentation (`CONTRIBUTING.md`...)
 
-### Ideas :bulb:
+### Ideas 💡
 
 - End user documentation
 - Extend the catalog of data science services
