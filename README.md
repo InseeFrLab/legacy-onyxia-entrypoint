@@ -54,13 +54,12 @@ Onyxia is developed by the French National institute of statistic and economic s
 		- [Ideas 💡](#ideas-)
 	- [Media](#media)
 
-## Screenshots
-
-![image](https://user-images.githubusercontent.com/6702424/122631126-8c8d3380-d0c9-11eb-968f-af3e605b0e07.png)
+## Screenshots  
+  
 ![scree_myservices](https://user-images.githubusercontent.com/6702424/121828699-a8a36600-ccc0-11eb-903c-1cd4b6cbb0ff.png)
+![image](https://user-images.githubusercontent.com/6702424/140529760-37b5a57b-5da6-4993-ba30-c1a4da68edba.png)
 ![screen_launcher](https://user-images.githubusercontent.com/6702424/121828696-a80acf80-ccc0-11eb-86fb-c7d0bca55d4f.png)
 ![my_secrets](https://user-images.githubusercontent.com/6702424/121828695-a5a87580-ccc0-11eb-9e86-295fdac6c497.png)
-
 
 ## Deploy onyxia on your infrastructure today 🚀
 
