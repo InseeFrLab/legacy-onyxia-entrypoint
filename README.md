@@ -159,11 +159,17 @@ The Onyxia project is actively developed. We are constantly working on new funct
 
 ## Media
 
-
 <p align="center">
     <i>OpenLAB - <a href="https://speakerdeck.com/etalabia/openlab-onyxia-06122021?slide=6">Download slides</a></i><br>
     <a href="https://bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/9be5b08deee82b1ba557f360214500580cfbda51-1638792324069">
         <img src="https://user-images.githubusercontent.com/6702424/147028499-cab9868d-1cee-439d-a777-59f5c2169b3a.png">
+    </a>
+</p>
+
+<p align="center">
+    <i>Article d'acteurs publics</i><br>
+    <a href="https://www.acteurspublics.fr/articles/une-boite-a-outils-en-ligne-pour-booster-lexploitation-des-donnees-dans-ladministration">
+        <img src="https://user-images.githubusercontent.com/6702424/147030430-afec9c32-372d-4118-85ee-4c773f16d12c.png">
     </a>
 </p>
 
