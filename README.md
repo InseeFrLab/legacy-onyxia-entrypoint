@@ -10,6 +10,12 @@
 
 <p align="center">
   <a href="https://datalab.sspcloud.fr/catalog/inseefrlab-helm-charts-datascience" title="Instance of Onyxia hosted in INSEE's data center">Our instance of Onyxia @ INSEE</a>
+  -
+  <a href="https://github.com/InseeFrLab/onyxia-web">Onyxia Web</a>
+  -
+  <a href="https://github.com/InseeFrLab/onyxia-ui">Onyxia UI</a>
+  -
+  <a href="https://github.com/InseeFrLab/onyxia-api">Onyxia K8 API</a>
 </p>
 
 Onyxia is a web app that aims at being the glue between multiple open source backend technologies to
