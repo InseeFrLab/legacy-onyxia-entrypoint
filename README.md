@@ -158,4 +158,7 @@ The Onyxia project is actively developed. We are constantly working on new funct
 
 ## Media
 
+[![OPENLAB](https://user-images.githubusercontent.com/6702424/147028142-24f8f28b-3f91-43e6-b443-3cf35ccbcfe2.png)](https://bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/9be5b08deee82b1ba557f360214500580cfbda51-1638792324069)
+
+
 [![EIG](https://user-images.githubusercontent.com/6702424/137893928-e341f3fe-13cf-44e6-9332-7ade8653c7f8.png)](https://youtu.be/ukMHBAXwzRg)
