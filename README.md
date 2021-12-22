@@ -158,7 +158,17 @@ The Onyxia project is actively developed. We are constantly working on new funct
 
 ## Media
 
-[![OPENLAB](https://user-images.githubusercontent.com/6702424/147028499-cab9868d-1cee-439d-a777-59f5c2169b3a.png)](https://bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/9be5b08deee82b1ba557f360214500580cfbda51-1638792324069)
 
+<p align="center">
+    <i>OpenLAB - <a href="https://speakerdeck.com/etalabia/openlab-onyxia-06122021?slide=6">Download slides</a></i><br>
+    <a href="https://bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/9be5b08deee82b1ba557f360214500580cfbda51-1638792324069">
+        <img src="https://user-images.githubusercontent.com/6702424/147028499-cab9868d-1cee-439d-a777-59f5c2169b3a.png">
+    </a>
+</p>
 
-[![EIG](https://user-images.githubusercontent.com/6702424/137893928-e341f3fe-13cf-44e6-9332-7ade8653c7f8.png)](https://youtu.be/ukMHBAXwzRg)
+<p align="center">
+    <i>Les Entrepreuneurs d'intérêt général - <a href="https://eig.etalab.gouv.fr">Découvrir le programme</a> </i><br>
+    <a href="https://youtu.be/ukMHBAXwzRg">
+        <img src="https://user-images.githubusercontent.com/6702424/137893928-e341f3fe-13cf-44e6-9332-7ade8653c7f8.png">
+    </a>
+</p>
