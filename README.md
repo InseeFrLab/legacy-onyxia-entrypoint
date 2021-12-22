@@ -64,8 +64,8 @@ Onyxia is developed by the French National institute of statistic and economic s
 ## Deploy onyxia on your infrastructure today 🚀
 
 <p align="center">
-	<img src="https://user-images.githubusercontent.com/6702424/137823160-40676450-36db-411d-a314-666d626d040f.png" />
 	<img src="https://user-images.githubusercontent.com/6702424/147029706-40b2d807-2733-44fe-9f59-08b935555848.png" />
+	<img src="https://user-images.githubusercontent.com/6702424/137823160-40676450-36db-411d-a314-666d626d040f.png" />
 </p>
 
 The simplest way to install Onyxia is to use [`Helm`](https://helm.sh).
