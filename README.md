@@ -20,7 +20,7 @@
 
 Onyxia is a web app that aims at being the glue between multiple open source backend technologies to
 provide a state of art working environnement for data scientists.  
-Onyxia is developed by the French National institute of statistic and economic studies ([INSEE](https://insee.fr)).  
+Onyxia is developed by the French National institute of statistics and economic studies ([INSEE](https://insee.fr)).  
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/6702424/136545513-f623d8c7-260d-4d93-a01e-2dc5af6ad473.gif" />
