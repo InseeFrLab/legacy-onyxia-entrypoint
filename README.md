@@ -31,8 +31,8 @@ Onyxia is developed by the French National institute of statistics and economic 
 - [An interface for launching docker images](https://datalab.sspcloud.fr/catalog/inseefrlab-helm-charts-datascience) 
   (e.g: [Jupyter](https://jupyter.org), [RStudio](https://www.rstudio.com)) on demand on a [Kubernetes](https://kubernetes.io) cluster.  
   The catalog of available images is not part of the app, you can create your own. 
-  ([here](https://github.com/inseefrlab/helm-charts-datascience) the catalog we build for the institute's needs.)
-- Define [the amount of RAM, CPU and **GPU** they would like to allocate](https://user-images.githubusercontent.com/6702424/137818454-3fdb3efb-1fbd-4e4d-85b1-64b00d8af03e.png) 
+  ([here](https://github.com/inseefrlab/helm-charts-datascience) is the catalog we build for the institute's needs.)
+- Users can define [the amount of RAM, CPU and **GPU** they would like to allocate](https://user-images.githubusercontent.com/6702424/137818454-3fdb3efb-1fbd-4e4d-85b1-64b00d8af03e.png) 
   to their containers.
 - Specify [a custom init script](https://user-images.githubusercontent.com/6702424/137819445-a9dfd053-a5f1-48da-a294-f20717512ef5.png) to be executed at launch.
 - [Define environnement variables](https://user-images.githubusercontent.com/6702424/137819689-71e59823-a553-4c3c-8558-2576316e4709.png) to be made available in the containers.
