@@ -15,7 +15,7 @@
   -
   <a href="https://github.com/InseeFrLab/onyxia-ui">Onyxia UI</a>
   -
-  <a href="https://github.com/InseeFrLab/onyxia-api">Onyxia K8 API</a>
+  <a href="https://github.com/InseeFrLab/onyxia-api">Onyxia K8s API</a>
 </p>
 
 Onyxia is a web app that aims at being the glue between multiple open source backend technologies to
