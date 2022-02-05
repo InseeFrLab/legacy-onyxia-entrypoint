@@ -26,6 +26,8 @@ Onyxia is developed by the French National institute of statistics and economic 
 <img src="https://user-images.githubusercontent.com/6702424/136545513-f623d8c7-260d-4d93-a01e-2dc5af6ad473.gif" />
 </p>
 
+https://user-images.githubusercontent.com/6702424/152631131-44050af8-a979-4c25-b09a-1a5521558361.mp4
+
 **Core feature set**:
 
 - [An interface for launching docker images](https://datalab.sspcloud.fr/catalog/inseefrlab-helm-charts-datascience) 
