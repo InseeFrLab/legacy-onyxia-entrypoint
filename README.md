@@ -72,7 +72,7 @@ https://user-images.githubusercontent.com/6702424/152631131-44050af8-a979-4c25-b
 ## Deploy onyxia on your infrastructure today 🚀
 
 <p align="center">
-	<img src="https://user-images.githubusercontent.com/6702424/147029706-40b2d807-2733-44fe-9f59-08b935555848.png" />
+	<img src="https://user-images.githubusercontent.com/6702424/154810177-3da80638-93c3-4a41-9710-13541b9d8974.png" />
 	<img src="https://user-images.githubusercontent.com/6702424/137823160-40676450-36db-411d-a314-666d626d040f.png" />
 </p>
 
