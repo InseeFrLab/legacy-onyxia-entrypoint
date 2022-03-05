@@ -63,12 +63,6 @@ if [[ $(id -u) = 0 ]]; then
 fi
 
 
-if [ -n "$URL_INIT_SERVICE" ]; then
-    wget -O - $URL_INIT_SERVICE | bash
-fi
-
-
-
 if [  "`which git`" != "" ]; then
     if [[ -n "$GIT_REPOSITORY" ]]; then
         if [[ -n "$GIT_PERSONAL_ACCESS_TOKEN" ]]; then
@@ -181,8 +175,9 @@ if [[ -e "$HOME/work" ]]; then
   echo "cd $HOME/work" >> $HOME/.bashrc
 fi
 
-
-
+if [ -n "$URL_INIT_SERVICE" ]; then
+    wget -O - $URL_INIT_SERVICE | bash
+fi
 
 echo "execution of $@"
 exec "$@"
