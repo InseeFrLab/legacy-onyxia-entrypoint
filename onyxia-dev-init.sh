@@ -1,4 +1,6 @@
 echo "Hello World" > /home/coder/work/hello.txt
+echo pwd > /home/coder/work/debug.txt
+
 
 #pwd > /home/coder/work/debug.txt
 #curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
