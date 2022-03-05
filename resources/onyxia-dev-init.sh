@@ -1,11 +1,12 @@
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
-sudo apt-get install python2 #Only for scss (will be removed soon)
+sudo apt-get install -y python2 #Only for scss (will be removed soon)
 sudo npm install -g yarn
 code-server --install-extension vscodevim.vim
 code-server --install-extension vscode-icons-team.vscode-icons
 
 git clone https://github.com/garronej/working_environnement && cd working_environnement && sudo ./apply.sh && source ~/.bashrc
+
 
 cd /home/coder/work
 # git clone https://github.com/garronej/tss-react                && cd tss-react                   && yarn install --frozen-lockfile && yarn build    && cd ..
