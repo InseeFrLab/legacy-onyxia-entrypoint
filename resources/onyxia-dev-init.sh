@@ -1,6 +1,10 @@
 echo "Hello World" > /home/coder/work/hello.txt
 echo $(pwd) >> /home/coder/work/hello.txt
 pwd > /home/coder/work/debug.txt
+echo "Hello World" > /home/coder/work/debug.txt
+echo `pwd` > /home/coder/work/hello2.txt
+
+
 
 
 #pwd > /home/coder/work/debug.txt
