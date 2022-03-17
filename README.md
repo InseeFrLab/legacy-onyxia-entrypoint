@@ -161,20 +161,22 @@ The repository is available here : [cloud-scripts](https://github.com/inseefrlab
 The Onyxia project is actively developed. We are constantly working on new functionalities to meet our users needs at [Insee](https://github.com/InseeFr). Do not hesitate to [get in touch with us](https://github.com/InseeFrLab/onyxia/discussions/new) to ask questions or share your ideas!
 ### Recently released 🎁
 
-- New services: Argo CD, Argo Workflow and Gravitee
+- New services: Argo CD, Argo Workflow, Pinot 
 - Step by step Onyxia deployment guide
 - Customizable UI themes
-- Pin & edit custom services
-- Secrets management
+- Onyxia installation documentation
+- Project documentation (`CONTRIBUTING.md`...)
 
 ### Coming soon ☄️
 
 - Projects and collaboration
+- Transform File Explorer into Data Explorer
 
 ### WIP 🏗
 
 - Onyxia installation documentation
 - Project documentation (`CONTRIBUTING.md`...)
+- New UI for FileExplorer
 
 ### Ideas 💡
 
