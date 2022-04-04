@@ -26,8 +26,6 @@ Onyxia is developed by the French National institute of statistics and economic 
 <img src="https://user-images.githubusercontent.com/6702424/136545513-f623d8c7-260d-4d93-a01e-2dc5af6ad473.gif" />
 </p>
 
-https://user-images.githubusercontent.com/6702424/152631131-44050af8-a979-4c25-b09a-1a5521558361.mp4
-
 **Core feature set**:
 
 - [An interface for launching docker images](https://datalab.sspcloud.fr/catalog/inseefrlab-helm-charts-datascience) 
@@ -42,6 +40,21 @@ https://user-images.githubusercontent.com/6702424/152631131-44050af8-a979-4c25-b
 - Deep integration with S3 for working with data (S3 as the open standard, not the AWS service) and with [Vault](https://www.vaultproject.io) 
   (for [secret management](https://user-images.githubusercontent.com/6702424/137820741-bed9ee77-124a-46f6-b686-8b8dff1615bd.png))
 - [Keycloak integration](https://user-images.githubusercontent.com/6702424/137821446-ed908862-69e3-464c-b347-bd8776a425cc.png).
+
+
+### Launching a container
+
+https://user-images.githubusercontent.com/6702424/152631131-44050af8-a979-4c25-b09a-1a5521558361.mp4
+
+### S3 File explorer
+
+https://user-images.githubusercontent.com/6702424/161458858-57321269-5a10-42e3-971a-80a505928fb5.mp4
+
+### Vault secret manager  
+
+For injecting secret environment variables in the containers. 
+
+https://user-images.githubusercontent.com/6702424/154877930-ce5dab0b-e508-43b5-a3d5-51bd6105ac45.mov
 
 # Table of content
 
