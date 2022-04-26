@@ -8,10 +8,9 @@ ingress:
     - host: onyxia.demo.insee.io
 ui:
   env:
-    OIDC_REALM: onyxia-demo
-    OIDC_CLIENT_ID: onyxia-client
-    OIDC_URL: https://keycloak.demo.insee.io/auth
-    MINIO_URL: https://minio.demo.insee.io
+    KEYCLOAK_REALM: onyxia-demo
+    KEYCLOAK_CLIENT_ID: onyxia-client
+    KEYCLOAK_URL: https://keycloak.demo.insee.io/auth
 api:
   env:
     keycloak.realm: onyxia-demo
@@ -41,8 +40,18 @@ api:
     },
     "data": { 
       "S3": { 
-        "URL": "todo", 
-        "monitoring": { "URLPattern": "todo" } 
+        "type": "minio",
+        "URL": "https://fake-minio.domaine",
+        "region": "us-east-1",
+        "bucketPrefix": "",
+        "groupBucketPrefix": "projet-",
+        "bucketClaim": "preferred_username",
+        "defaultDurationSeconds": 86400,
+        "keycloakParams": {
+          "URL":"https://keycloak.demo.insee.io/auth",
+          "realm":"onyxia-demo",
+          "clientId":"onyxia-client"
+        }
       } 
     },
     "auth": { "type": "openidconnect" },

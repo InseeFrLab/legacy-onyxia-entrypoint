@@ -8,9 +8,9 @@ ingress:
     - host: onyxia.demo.insee.io
 ui:
   env:
-    OIDC_REALM: onyxia-demo
-    OIDC_CLIENT_ID: onyxia-client
-    OIDC_URL: https://keycloak.demo.insee.io/auth
+    KEYCLOAK_REALM: onyxia-demo
+    KEYCLOAK_CLIENT_ID: onyxia-client
+    KEYCLOAK_URL: https://keycloak.demo.insee.io/auth
 api:
   env:
     keycloak.realm: onyxia-demo

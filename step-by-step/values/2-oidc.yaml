@@ -5,13 +5,15 @@ ingress:
   hosts:
     - host: onyxia.demo.insee.io
 ui:
+  image:
+    name: inseefrlab/onyxia-web
   env:
-    OIDC_REALM: onyxia-demo
-    OIDC_CLIENT_ID: onyxia-client
-    OIDC_URL: https://keycloak.demo.insee.io/auth
+    KEYCLOAK_REALM: sspcloud
+    KEYCLOAK_CLIENT_ID: onyxia
+    KEYCLOAK_URL: https://auth.lab.sspcloud.fr/auth
 api:
   env:
-    keycloak.realm: onyxia-demo
-    keycloak.auth-server-url: http://keycloak.demo.insee.io/auth
+    keycloak.realm: sspcloud
+    keycloak.auth-server-url: https://auth.lab.sspcloud.fr/auth
     authentication.mode: "openidconnect"
-    springdoc.swagger-ui.oauth.clientId: onyxia-client
+    springdoc.swagger-ui.oauth.clientId: onyxia
