@@ -1,5 +1,7 @@
 #!/bin/bash
 
+VAULT_VERSION=1.10.2
+
 # Utilities
 apt-get -y install wget \
                    curl \
@@ -26,7 +28,7 @@ wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc && 
     chmod +x /usr/local/bin/mc
 
 # Install vault
-wget https://releases.hashicorp.com/vault/1.10.2/vault_1.10.2_linux_amd64.zip -O vault.zip  && \
+wget https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip -O vault.zip  && \
     unzip vault.zip -d /usr/local/bin/ && \
     rm vault.zip
 vault -autocomplete-install
