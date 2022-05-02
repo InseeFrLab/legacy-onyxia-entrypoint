@@ -18,7 +18,7 @@ Those permissions should be granted to the `onyxia-api` pod (done automatically 
 
 ### Reverse proxy (Ingress controller)
 
-Onyxia is currently primarily a web-based application so reverse-proxyfying it is usually needed.  
+Onyxia is a web-based application so reverse-proxyfying it is usually needed.  
 Onyxia has been primarily tested on [`nginx-ingress`](https://kubernetes.github.io/ingress-nginx/) but any ingress controller should work fine.
 
 Optional dependencies are [listed below](#dependencies).
