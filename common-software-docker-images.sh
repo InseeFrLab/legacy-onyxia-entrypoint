@@ -9,7 +9,8 @@ apt-get -y install wget \
                    bash-completion \
                    vim \
                    unzip \
-                   ca-certificates-java
+                   ca-certificates
+update-ca-certificates
 
 # Install kubectl
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
