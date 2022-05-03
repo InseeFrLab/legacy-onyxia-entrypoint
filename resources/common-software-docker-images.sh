@@ -22,6 +22,8 @@ kubectl completion bash > /etc/bash_completion.d/kubectl
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 && \
     chmod 700 get_helm.sh && \
     ./get_helm.sh
+    
+helm completion bash > /etc/bash_completion.d/helm
 
 # Install Minio client
 wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc && \
