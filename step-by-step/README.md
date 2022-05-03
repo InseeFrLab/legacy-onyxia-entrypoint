@@ -34,7 +34,7 @@ We will now configure it to remove thoses limitations.
 
 ## Set up authentication (openidconnect)
 
-We strongly recommend you don't use Onyxia without any authentication configured.  
+We firmly advise against using Onyxia without authentication configured.  
 Onyxia supports `openidconnect`.
 
 ### Set up keycloak
