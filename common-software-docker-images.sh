@@ -3,12 +3,12 @@
 VAULT_VERSION=1.10.2
 
 # Utilities
-apt-get -y –no-install-recommends install wget \
-                                          curl \
-                                          jq \
-                                          bash-completion \
-                                          vim \
-                                          unzip
+apt-get install -y --no-install-recommends wget \
+                                           curl \
+                                           jq \
+                                           bash-completion \
+                                           vim \
+                                           unzip
 
 # Install kubectl
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
