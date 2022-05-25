@@ -149,6 +149,14 @@ The repository is available here : [cloud-scripts](https://github.com/inseefrlab
 ## Media
 
 <p align="center">
+    <i>Energy Data Hack</i><br>
+    <a href="https://www.youtube.com/watch?v=1G0J950sWso">
+        <img src="https://user-images.githubusercontent.com/6702424/170261575-e5c2345e-4de2-4878-ac06-f362b7affd2a.png">
+    </a>
+</p>  
+
+
+<p align="center">
     <i>OpenLAB - <a href="https://speakerdeck.com/etalabia/openlab-onyxia-06122021?slide=6">Download slides</a></i><br>
     <a href="https://bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/9be5b08deee82b1ba557f360214500580cfbda51-1638792324069">
         <img src="https://user-images.githubusercontent.com/6702424/147028499-cab9868d-1cee-439d-a777-59f5c2169b3a.png">
