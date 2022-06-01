@@ -8,12 +8,12 @@ ui:
   image:
     name: inseefrlab/onyxia-web
   env:
-    KEYCLOAK_REALM: sspcloud
-    KEYCLOAK_CLIENT_ID: onyxia
-    KEYCLOAK_URL: https://auth.lab.sspcloud.fr/auth
+    KEYCLOAK_REALM: onyxia-demo
+    KEYCLOAK_CLIENT_ID: onyxia-client
+    KEYCLOAK_URL: https://keycloak.demo.insee.io/auth
 api:
   env:
-    keycloak.realm: sspcloud
-    keycloak.auth-server-url: https://auth.lab.sspcloud.fr/auth
+    keycloak.realm: onyxia-demo
+    keycloak.auth-server-url: https://keycloak.demo.insee.io/auth
     authentication.mode: "openidconnect"
-    springdoc.swagger-ui.oauth.clientId: onyxia
+    springdoc.swagger-ui.oauth.clientId: onyxia-client
