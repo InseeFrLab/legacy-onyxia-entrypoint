@@ -36,7 +36,7 @@ api:
       "catalogId": "inseefrlab-helm-charts-datascience",
       "packageName": "cloudshell"
     },
-      "initScript": "https://git.lab.sspcloud.fr/innovation/plateforme-onyxia/services-ressources/-/raw/master/onyxia-init.sh"
+      "initScript": "https://inseefrlab.github.io/onyxia/onyxia-init.sh"
     },
     "data": { 
       "S3": { 
