@@ -71,6 +71,11 @@ if [  "`which git`" != "" ]; then
         else
             COMMAND=`echo git clone $GIT_REPOSITORY`
         fi
+
+        if [[ -n "$GIT_BRANCH" ]]; then
+            COMMAND="$COMMAND --branch $GIT_BRANCH"
+        fi
+
         if [[ -n "$ROOT_PROJECT_DIRECTORY" ]]; then
             if [[ `ls $ROOT_PROJECT_DIRECTORY | grep -v "lost+found"` = "" ]]; then
                 cd $ROOT_PROJECT_DIRECTORY 
