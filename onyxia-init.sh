@@ -67,7 +67,11 @@ if [  "`which git`" != "" ]; then
     if [[ -n "$GIT_REPOSITORY" ]]; then
         if [[ -n "$GIT_PERSONAL_ACCESS_TOKEN" ]]; then
             REPO_DOMAIN=`echo "$GIT_REPOSITORY" | awk -F/ '{print $3}'`
-            COMMAND=`echo git clone $GIT_REPOSITORY | sed "s/$REPO_DOMAIN/$GIT_PERSONAL_ACCESS_TOKEN@$REPO_DOMAIN/"`
+            if [  $REPO_DOMAIN = "github.com" ]; then
+                COMMAND=`echo git clone $GIT_REPOSITORY | sed "s/$REPO_DOMAIN/$GIT_PERSONAL_ACCESS_TOKEN@$REPO_DOMAIN/"`
+            else
+                COMMAND=`echo git clone $GIT_REPOSITORY | sed "s/$REPO_DOMAIN/oauth2:$GIT_PERSONAL_ACCESS_TOKEN@$REPO_DOMAIN/"`
+            fi
         else
             COMMAND=`echo git clone $GIT_REPOSITORY`
         fi
