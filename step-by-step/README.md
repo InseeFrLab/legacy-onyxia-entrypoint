@@ -127,10 +127,41 @@ If you already have a running Vault instance, you can skip this step.
 
 An example of Vault deployment can be found [here](vault). If you use it, make sure to change credentials beforehand. Also note that persistence has been disabled so any pod restart will wipe any data. Also note that [dev mode](https://www.vaultproject.io/docs/concepts/dev-server) is also enabled to facilitate install for demonstration purpose. **This mode is not suitable for production**.
 
+### Configuring Keycloak for Vault
+
+To be compatible with `Vault`, we need to create a client, and several mappers for both this new client and the onyxia client.
+
+- Create a new client `vault`
+  
+| Field               | Value                           |
+| ------------------- | ------------------------------- |
+| Name                | `vault`                         |
+| Root URL            | `https://vault.demo.insee.io`   |
+| Valid Redirect URIs | `https://vault.demo.insee.io/*` |
+| Web-origins         | `https://vault.demo.insee.io`   |
+
+- Add a mapper to `vault` client
+
+| Field           | Value                    |
+| --------------- | ------------------------ |
+| Type            | `Claims parameter Token` |
+| Claim name      | `vault`                  |
+| Add to ID Token | `Enabled`                |
+
+- Add a mapper to `onyxia-client`
+
+| Field                    | Value      |
+| ------------------------ | ---------- |
+| Type                     | `Audience` |
+| Included Client Audience | `vault`    |
+
 ### Configure Vault  
 
 We will now configure vault to enable `JWT` support, set policies for users permissions and initialize the secret engine.  
-You will need the vault `CLI`. You can either download it [here](https://www.vaultproject.io/downloads) and configure `VAULT_ADDR=https://vault.demo.insee.io` and `VAULT_TOKEN=root` or exec into the vault pod `kubectl exec -it vault-0 -n vault -- /bin/sh` which will have vault `CLI` installed and preconfigured.  
+
+You will need the vault `CLI`. You can either download it [here](https://www.vaultproject.io/downloads) and configure `VAULT_ADDR=https://vault.demo.insee.io` and `VAULT_TOKEN=root` or exec into the vault pod `kubectl exec -it vault-0 -n vault -- /bin/sh` which will have vault `CLI` installed and pre-configured.  
+
+First, we start by creating a `JWT` endpoint in Vault, and writing information about Keycloak to the configuration. The `default_role="onyxia-user"` will be used by Onyxia to connect to Vault.
 
 ```
 vault auth enable jwt
@@ -140,18 +171,12 @@ vault auth enable jwt
 vault write auth/jwt/config \
     oidc_discovery_url="https://keycloak.demo.insee.io/auth/realms/onyxia-demo" \
     default_role="onyxia-user"
-```  
-
-```
-vault write auth/jwt/role/onyxia-user \
-    role_type="jwt" \
-    bound_audiences="onyxia" \
-    user_claim="preferred_username" \
-    policies="default"
 ```
 
-We now need to set the policy for permissions.  
+We now need to set the policy for permissions.
+
 Locally create a `onyxia-kv-policy.hcl` file with the following content, replacing `auth_jwt_fd8af65a` with the generated id from the previous step. You can get it using `vault auth list | grep jwt | awk '{print $3}'`.  
+
 ```
 path "onyxia-kv/{{identity.entity.aliases.auth_jwt_fd8af65a.name}}/*" {
   capabilities = ["create","update","read","delete","list"]
@@ -166,16 +191,26 @@ path "onyxia-kv/metadata/{{identity.entity.aliases.auth_jwt_fd8af65a.name}}/*" {
 }
 ```  
 
-Then apply the policy :  
+Then, write the policy to Vault:  
 
 ```
 vault policy write onyxia-kv onyxia-kv-policy.hcl
 ```
 
-And finally, enable the secret engine :  
+Now, enable the secret engine:  
 
 ```
 vault secrets enable -path=onyxia-kv kv-v2
+```
+
+We apply the newly-created policy `onyxia-kv` on `policies` and we set the `bound_audiences` to the client we created for Vault in Keycloak.
+
+```bash
+vault write auth/jwt/role/onyxia-user \
+    role_type="jwt" \
+    bound_audiences="vault" \
+    user_claim="preferred_username" \
+    policies="onyxia-kv"
 ```
 
 ### Link Vault to Onyxia
