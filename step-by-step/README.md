@@ -109,6 +109,21 @@ mc admin policy add demo stsonly ./minio/stsonly.json
 
 If successful, you should be able to login to the minio console and create the bucket that has the same name as your user id.
 
+Onyxia currently supports `id_token` but not `access_token`. This parameter is located in the `identity_openid` object as `claim_userinfo`.
+
+```
+mc admin config get demo identity_openid
+```
+
+To disable it if it was enabled:
+
+```
+mc admin config set demo identity_openid claim_userinfo=off
+mc admin service restart demo
+```
+
+> This parameter may be accessible as an environment variable through your minio installation under the name `MINIO_IDENTITY_OPENID_CLAIM_USERINFO`, depending on your setup
+
 ### Link minIO to Onyxia
 
 In Onyxia's UI configuration, we only need to set `MINIO_URL: https://minio.demo.insee.io` :
