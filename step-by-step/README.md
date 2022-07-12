@@ -88,10 +88,42 @@ An example of MinIO deployment can be found [here](minio). If you use it, make s
 
 We will need to make some changes to Keycloak to support minIO :
 
-- Create a new client (e.g `minio`) with `https://minio-console.demo.insee.io` as root URL, `https://minio-console.demo.insee.io/*` as valid redirect URIs, `https://minio-console.demo.insee.io` as web origins. For this client, add a mapper of type `Hardcoded claim` with claim name `policy` and claim value `stsonly`. Make sure `Add to id Token` is enabled.
-- In Onyxia's client configuration, add two mappers : `audience-minio` of type `Audience` with `Included client audience: minio` and `policy` of type `Hardcoded claim` with claim name `policy` and claim value `stsonly`.
-- You probably want to extend token's duration as the `5 minutes` default value is not enough for users to use the token inside their services. This can be done either `realm wide` (realm settings => tokens) or `per client` (settings => advanced settings).
-- If you intend to use groups or want to workaround this bug : https://github.com/InseeFrLab/onyxia-web/issues/263, you may want to add a `groups` client scope with a `Group membership` mapper.
+- Create a new **client** for minIO (e.g `minio`)
+  
+| Field               | Value                                   |
+| ------------------- | --------------------------------------- |
+| Root URL            | `https://minio-console.demo.insee.io`   |
+| Valid Redirect URIs | `https://minio-console.demo.insee.io/*` |
+| Web-origins         | `https://minio-console.demo.insee.io`   |
+
+- Create a **mapper** for minio's client configuration (e.g `minio`)
+
+| Field           | Value             |
+| --------------- | ----------------- |
+| Type            | `Hardcoded claim` |
+| Claim name      | `policy`          |
+| Claim value     | `stsonly`         |
+| Add to ID Token | `Enabled`         |
+
+- Add two **mappers** to onyxia's client configuration (e.g `onyxia-client`)
+  - An **audience** with name `audience-minio`
+  
+  | Field                    | Value      |
+  | ------------------------ | ---------- |
+  | Type                     | `Audience` |
+  | Included Client Audience | `minio`    |
+
+  - A **hardcoded claim** with name `policy`
+  
+  | Field           | Value             |
+  | --------------- | ----------------- |
+  | Type            | `Hardcoded claim` |
+  | Claim name      | `policy`          |
+  | Claim value     | `stsonly`         |
+  | Add to ID Token | `Enabled`         |
+
+- You probably want to **extend token's duration** as the `5 minutes` default value is not enough for users to use the token inside their services. This can be done either `realm wide` (realm settings => tokens => access_token_lifespan) or `per client` (settings => advanced settings).
+- If you intend to use **groups** or want to workaround this bug : https://github.com/InseeFrLab/onyxia-web/issues/263, you may want to add a `groups` client scope with a `Group membership` mapper.
 
 ### Configure minIO
 
@@ -152,6 +184,7 @@ vault write auth/jwt/role/onyxia-user \
 
 We now need to set the policy for permissions.  
 Locally create a `onyxia-kv-policy.hcl` file with the following content, replacing `auth_jwt_fd8af65a` with the generated id from the previous step. You can get it using `vault auth list | grep jwt | awk '{print $3}'`.  
+
 ```
 path "onyxia-kv/{{identity.entity.aliases.auth_jwt_fd8af65a.name}}/*" {
   capabilities = ["create","update","read","delete","list"]
