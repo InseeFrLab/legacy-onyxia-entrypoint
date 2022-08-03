@@ -48,7 +48,7 @@ if [  "`which kubectl`" != "" ]; then
     kubectl config use-context in-cluster
     export KUBERNETES_SERVICE_ACCOUNT=`cat /var/run/secrets/kubernetes.io/serviceaccount/token | tr "." "\n" | head -2 | tail -1 | base64 --decode | jq -r ' .["kubernetes.io"].serviceaccount.name'`
     export KUBERNETES_NAMESPACE=`cat /var/run/secrets/kubernetes.io/serviceaccount/namespace`
-    chmod 640 ${HOME}/.kube/config 
+    chmod 644 ${HOME}/.kube/config 
 fi
 
 
@@ -186,11 +186,6 @@ fi
 
 if [ -n "$URL_INIT_SERVICE" ]; then
     wget -O - $URL_INIT_SERVICE | bash
-fi
-
-# Temporary permissions fix for custom images
-if [[ `whoami` == "onyxia" ]]; then
-    chown -R onyxia:users ${HOME}
 fi
 
 echo "execution of $@"
