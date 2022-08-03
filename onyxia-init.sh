@@ -188,8 +188,8 @@ if [ -n "$URL_INIT_SERVICE" ]; then
     wget -O - $URL_INIT_SERVICE | bash
 fi
 
-# Temporary permissions fix for custom images
-if [[ `whoami` == "onyxia" ]]; then
+# Temporary permissions fix for custom interactive images that need to run as root
+if [ `whoami` == "root" ] && grep -q "onyxia" /etc/passwd; then
     chown -R onyxia:users ${HOME}
 fi
 
