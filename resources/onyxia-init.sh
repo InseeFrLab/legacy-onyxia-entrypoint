@@ -48,7 +48,7 @@ if [  "`which kubectl`" != "" ]; then
     kubectl config use-context in-cluster
     export KUBERNETES_SERVICE_ACCOUNT=`cat /var/run/secrets/kubernetes.io/serviceaccount/token | tr "." "\n" | head -2 | tail -1 | base64 --decode | jq -r ' .["kubernetes.io"].serviceaccount.name'`
     export KUBERNETES_NAMESPACE=`cat /var/run/secrets/kubernetes.io/serviceaccount/namespace`
-    chmod 640 .kube/config 
+    chmod 640 ${HOME}/.kube/config 
 fi
 
 
