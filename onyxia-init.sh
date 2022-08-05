@@ -50,7 +50,9 @@ if [  "`which kubectl`" != "" ]; then
     export KUBERNETES_NAMESPACE=`cat /var/run/secrets/kubernetes.io/serviceaccount/namespace`
     chmod 640 ${HOME}/.kube/config
     # Fix permissions for custom images that need to be run as root
-    if [ `whoami` == "root" ] && grep -q "onyxia" /etc/passwd; then chown -R onyxia:users ${HOME}/.kube fi
+    if [ `whoami` == "root" ] && grep -q "onyxia" /etc/passwd; then 
+        chown -R onyxia:users ${HOME}/.kube 
+    fi
 fi
 
 
