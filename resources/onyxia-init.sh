@@ -52,7 +52,7 @@ if [  "`which kubectl`" != "" ]; then
     if [[ $(id -u) = 0 ]] && grep -q "onyxia" /etc/passwd; then 
         chown -R onyxia:users ${HOME}/.kube 
     fi
-
+fi
 
 
 
