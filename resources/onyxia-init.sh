@@ -51,10 +51,7 @@ if [  "`which kubectl`" != "" ]; then
     # Fix permissions for custom images that need to be run as root
     if [[ $(id -u) = 0 ]] && grep -q "onyxia" /etc/passwd; then 
         chown -R onyxia:users ${HOME}/.kube 
-    else
-        chmod 640 ${HOME}/.kube/config
     fi
-fi
 
 
 
