@@ -18,6 +18,8 @@
   <a href="https://github.com/InseeFrLab/onyxia-api">Onyxia K8s API</a>
 </p>
 
+> 🗣 v1 (of onyxia-web) have been released with a breaking change. Please checkout [the migration guide](https://docs.onyxia.sh/)
+
 Onyxia is a web app that aims at being the glue between multiple open source backend technologies to
 provide a state of art working environnement for data scientists.  
 Onyxia is developed by the French National institute of statistics and economic studies ([INSEE](https://insee.fr)).  
