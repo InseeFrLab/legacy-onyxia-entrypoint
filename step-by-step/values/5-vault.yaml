@@ -12,7 +12,7 @@ ui:
     OIDC_CLIENT_ID: onyxia-client
     OIDC_URL: https://keycloak.demo.insee.io/auth
     MINIO_URL: https://minio.demo.insee.io
-    VAULT_URL: https://vault.demo.insee.io
+
 api:
   env:
     keycloak.realm: onyxia-demo
@@ -20,33 +20,38 @@ api:
     authentication.mode: "openidconnect"
     springdoc.swagger-ui.oauth.clientId: onyxia-client
   regions: [
-{
-  "id": "demo",
-  "name": "Demo",
-  "description": "This is a demo region, feel free to try Onyxia !",
-  "services": {
-    "type": "KUBERNETES",
-    "singleNamespace": false,
-    "namespacePrefix": "user-",
-    "usernamePrefix": "oidc-",
-    "groupNamespacePrefix": "projet-",
-    "groupPrefix": "oidc-",
-    "authenticationMode": "admin",
-    "expose": { "domain": "demo.insee.io" },
-    "monitoring": { "URLPattern": "todo" },
-    "cloudshell": {
-      "catalogId": "inseefrlab-helm-charts-datascience",
-      "packageName": "cloudshell"
-    },
-      "initScript": "https://git.lab.sspcloud.fr/innovation/plateforme-onyxia/services-ressources/-/raw/master/onyxia-init.sh"
-    },
-    "data": { 
-      "S3": { 
-        "URL": "todo", 
-        "monitoring": { "URLPattern": "todo" } 
-      } 
-    },
-    "auth": { "type": "openidconnect" },
-    "location": { "lat": 48.8164, "long": 2.3174, "name": "Montrouge (France)" }
-  }
-]
+    {
+      "id": "demo",
+      "name": "Demo",
+      "description": "This is a demo region, feel free to try Onyxia !",
+      "services": {
+        "type": "KUBERNETES",
+        "singleNamespace": false,
+        "namespacePrefix": "user-",
+        "usernamePrefix": "oidc-",
+        "groupNamespacePrefix": "projet-",
+        "groupPrefix": "oidc-",
+        "authenticationMode": "admin",
+        "expose": { "domain": "demo.insee.io" },
+        "monitoring": { "URLPattern": "todo" },
+        "cloudshell": {
+          "catalogId": "inseefrlab-helm-charts-datascience",
+          "packageName": "cloudshell"
+        },
+          "initScript": "https://git.lab.sspcloud.fr/innovation/plateforme-onyxia/services-ressources/-/raw/master/onyxia-init.sh"
+        },
+        "data": { 
+          "S3": { 
+            "URL": "todo", 
+            "monitoring": { "URLPattern": "todo" } 
+          } 
+        },
+        "vault": { 
+                    "URL": "https://vault.demo.insee.io",
+                    "kvEngine": "onyxia-kv",
+                    "role": "onyxia-user"
+            },
+        "auth": { "type": "openidconnect" },
+        "location": { "lat": 48.8164, "long": 2.3174, "name": "Montrouge (France)" }
+      }
+    ]

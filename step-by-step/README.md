@@ -260,14 +260,55 @@ vault write auth/jwt/role/onyxia-user \
     policies="onyxia-kv"
 ```
 
+At last, we need to add cors policy 
+
+The official doc can be found [here](https://developer.hashicorp.com/vault/api-docs/system/config-cors)
+
+```shell
+# get current core settings
+curl --header "X-Vault-Token: <your-vault-root-token>" https://vault.demo.insee.io/v1/sys/config/cors
+```
+
+To update the core setting, we need to use `POST` on `/sys/config/cors`
+
+Below is an example payload
+
+```json
+{
+    "allowed_origins": "https://onyxia.demo.insee.io",
+    "allowed_headers": "X-Custom-Header"
+}
+
+```
+> don't forget to use the complete url (https://...). The `allowed_headers` is useful when you have custom headers which you want vault to accept. The standard headers are added by default.  
+
+Sample request
+
+```shell
+# add your 
+curl \
+    --header "X-Vault-Token: <your-vault-root-token>" \
+    --request POST \
+    --data @cors.json \
+    https://vault.demo.insee.io/v1/sys/config/cors
+```
+
 ### Link Vault to Onyxia
 
-In Onyxia's UI configuration, we only need to set `VAULT_URL: https://vault.demo.insee.io` :
+You need to add below lines under `api.regions.vault` in your onyxia helm config file
 
-[5-vault.yaml](values/5-vault.yaml)
+```yaml
+"vault": { 
+                "URL": "https://vault.demo.insee.io",
+                "kvEngine": "onyxia-kv",
+                "role": "onyxia-user"
+        },
+```
+
+A full example can be found here [5-vault.yaml](values/5-vault.yaml)
 
 ```
 helm upgrade onyxia inseefrlab/onyxia -f values/5-vault.yaml
 ```
 
-If you used other values for the engine or role than the default one, also specify the corresponding env variable : `VAULT_KV_ENGINE=onyxia-kv` and `VAULT_ROLE=onyxia-user`.
+> If you used other values for the engine or role than the default one, you need to modify the value of : `kvEngine` and `role`.
